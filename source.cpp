@@ -1,5 +1,4 @@
 #include <iostream>
-//#include <math.h>
 using namespace std;
 
 int factorial(int n) {
@@ -17,14 +16,24 @@ int factorial(int n) {
 }
 
 int main() {
-	int n,r,nPr;
-	cout << "Welcome to the Permutation Calculator.\n";
+	int n,r;
+	char select;
+	cout << "Welcome to the Permutation and Combination Calculator.\n";
 	cout << "n:";
 	cin >> n;
 	cout << "r:";
 	cin >> r;
-	nPr = factorial(n)/factorial(n-r);
-	cout << nPr;
+	cout << "Is this Permutation or Combination? (P/C):";
+	cin >> select;
+	if (select == 'P' or select == 'p'){
+		int nPr = factorial(n)/factorial(n-r);
+		cout << nPr;
+	}
+	else if (select == 'C' or select == 'c'){
+		int nCr = factorial(n)/(factorial(n-r)*factorial(r));
+		cout << nCr;
 	return 0;		
+	}
 }
+
 
